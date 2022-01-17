@@ -1,0 +1,55 @@
+Helper routines for linked list creation(inspired kernel list.h).
+
+Overview
+========
+
+list.h -  for ordinary doubly linked list(prev pointer of a first element and next
+          pointer of a last element contain NULL)
+clist.h - circular doubly linked list(prev pointer of a first element contain an
+          address of a last element; next pointer of a last element contain an
+		  address of a first element)
+
+Each h-file has routines for manipulation of list_item_head struct and routines for
+manipulation of user item struct.
+
+Using
+=====
+
+Let's create an our struct for our linked list:
+
+#include "list.h"
+
+struct part {
+	struct list_item_head list; /* prev/next pointers */
+	float mass; /* kg */
+	char *article; /* part article */
+	/* some other data */
+	/* ... */
+};
+
+Here 'struct list_item_head list;' - is what makes our struct a member of a list;
+Now try to init our items and search needed one:
+
+void
+main(void)
+{
+	struct part p1, p2, p3, *p;
+	struct list_item_head *lh;
+
+	p1.mass = 2;
+	p1.article = "001";
+	p2.mass = 0.3;
+	p2.article = "002";
+	p3.mass = 0.75;
+	p3.article = "003";
+
+	list_for_each(lh, &p1.list) {
+		p = list_item(lh, struct part, list);
+		if (p->mass > 1)
+			printf("%s: %f\n", p->article, p->mass);
+		}
+}
+
+This code is from ex1.c file. A little simplified version is in ex2.c.
+And ex3.c contains a more complete example.
+Look for additional routines in list.h and clist.h.
