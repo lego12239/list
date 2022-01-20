@@ -124,7 +124,7 @@ static inline void clist_swap(struct clist_item_head *h1, struct clist_item_head
 #define clist_for_each_item(i, start, member) \
 	for(i = start; \
 	    i; \
-	    i = clist_get_next_item(i == start ? NULL : i, member))
+	    i = clist_get_next_item(i, member), i = i == start ? NULL : i)
 
 /*
  * i, start - a list item type var
@@ -132,7 +132,7 @@ static inline void clist_swap(struct clist_item_head *h1, struct clist_item_head
 #define clist_for_each_item_reverse(i, start, member) \
 	for(i = start; \
 	    i; \
-	    i = clist_get_prev_item(i == start ? NULL : i, member))
+	    i = clist_get_prev_item(i, member), i = i == start ? NULL : i)
 
 /*
  * tmp, i, start - a list item type var
