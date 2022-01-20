@@ -1366,6 +1366,8 @@ test21_0(void)
 		}
 		i++;
 	}
+	if (i != 3)
+		TERR("i isn't 3: %d", i);
 
 	return 1;
 }
@@ -1417,6 +1419,8 @@ test21_1(void)
 		}
 		i++;
 	}
+	if (i != 3)
+		TERR("i isn't 3: %d", i);
 
 	return 1;
 }
@@ -1468,6 +1472,8 @@ test21_2(void)
 		}
 		i++;
 	}
+	if (i != 3)
+		TERR("i isn't 3: %d", i);
 
 	return 1;
 }
@@ -1519,6 +1525,8 @@ test22_0(void)
 		}
 		i++;
 	}
+	if (i != 3)
+		TERR("i isn't 3: %d", i);
 
 	return 1;
 }
@@ -1570,6 +1578,8 @@ test22_1(void)
 		}
 		i++;
 	}
+	if (i != 3)
+		TERR("i isn't 3: %d", i);
 
 	return 1;
 }
@@ -1621,6 +1631,8 @@ test22_2(void)
 		}
 		i++;
 	}
+	if (i != 3)
+		TERR("i isn't 3: %d", i);
 
 	return 1;
 }
@@ -1674,6 +1686,8 @@ test23_0(void)
 		myi->list.next = &myi->list;
 		i++;
 	}
+	if (i != 3)
+		TERR("i isn't 3: %d", i);
 
 	return 1;
 }
@@ -1727,6 +1741,8 @@ test23_1(void)
 		myi->list.next = &myi->list;
 		i++;
 	}
+	if (i != 3)
+		TERR("i isn't 3: %d", i);
 
 	return 1;
 }
@@ -1780,6 +1796,8 @@ test23_2(void)
 		myi->list.next = &myi->list;
 		i++;
 	}
+	if (i != 3)
+		TERR("i isn't 3: %d", i);
 
 	return 1;
 }
@@ -1833,6 +1851,8 @@ test24_0(void)
 		myi->list.next = &myi->list;
 		i++;
 	}
+	if (i != 3)
+		TERR("i isn't 3: %d", i);
 
 	return 1;
 }
@@ -1886,6 +1906,8 @@ test24_1(void)
 		myi->list.next = &myi->list;
 		i++;
 	}
+	if (i != 3)
+		TERR("i isn't 3: %d", i);
 
 	return 1;
 }
@@ -1939,6 +1961,8 @@ test24_2(void)
 		myi->list.next = &myi->list;
 		i++;
 	}
+	if (i != 3)
+		TERR("i isn't 3: %d", i);
 
 	return 1;
 }
