@@ -110,7 +110,7 @@ static inline void clist_swap(struct clist_item_head *h1, struct clist_item_head
 #endif  /* __GNUC__ */
 
 #define clist_item_init(item, member)\
-	((item) ? clist_item_head_init(&(item)->member) : NULL)
+	do { if (item) clist_item_head_init(&(item)->member); } while (0)
 
 #define clist_get_next_item(item, member) \
 	((item) ? clist_item((item)->member.next, typeof(*(item)), member) : NULL)

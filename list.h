@@ -140,7 +140,7 @@ static inline void list_swap(struct list_item_head *h1, struct list_item_head *h
 #endif  /* __GNUC__ */
 
 #define list_item_init(item, member)\
-	((item) ? list_item_head_init(&(item)->member) : NULL)
+	do { if (item) list_item_head_init(&(item)->member); } while (0)
 
 #define list_get_head_item(item, member) \
 	((item) ? list_item(list_get_head(&(item)->member), typeof(*(item)), member) : NULL)
