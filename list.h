@@ -13,7 +13,6 @@
  * - list_cut()?
  * - list_push()/list_pop()?
  * - list_unshift()/list_shift()?
- * - list_join()?
  */
 
 #include <stddef.h>
@@ -111,6 +110,13 @@ static inline void list_swap(struct list_item_head *h1, struct list_item_head *h
 	_list_add(h1, h2_prev, h2_next);
 }
 
+static inline void list_join(struct list_item_head *h1, struct list_item_head *h2)
+{
+	h1 = list_get_tail(h1);
+	h2->prev = h1;
+	h1->next = h2;
+}
+
 #define list_for_each(h, start) \
 	for(h = (start); h; h = h->next)
 
@@ -195,5 +201,8 @@ static inline void list_swap(struct list_item_head *h1, struct list_item_head *h
 
 #define list_rm_item(item, member) \
 	list_rm(&(item)->member)
+
+#define list_join_item(lhead1, lhead2, member) \
+	list_join(&(lhead1)->member, &(lhead2)->member)
 
 #endif /* __LIST_H__ */
