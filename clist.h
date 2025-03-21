@@ -157,4 +157,7 @@ static inline void clist_swap(struct clist_item_head *h1, struct clist_item_head
 #define clist_add_item(new, old, member) \
 	clist_add(&(new)->member, &(old)->member)
 
+#define clist_rm_item(item, member) \
+	clist_rm(&(item)->member)
+
 #endif /* __CLIST_H__ */
