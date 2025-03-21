@@ -193,4 +193,7 @@ static void list_swap(struct list_item_head *h1, struct list_item_head *h2)
 #define list_add_item(new, old, member) \
 	list_add(&(new)->member, &(old)->member)
 
+#define list_rm_item(item, member) \
+	list_rm(&(item)->member)
+
 #endif /* __LIST_H__ */
