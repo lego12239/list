@@ -94,7 +94,7 @@ static inline void list_rm(struct list_item_head *h)
 	h->prev = NULL;
 }
 
-static inline void list_swap(struct list_item_head *h1, struct list_item_head *h2)
+static void list_swap(struct list_item_head *h1, struct list_item_head *h2)
 {
 	struct list_item_head *h2_prev, *h2_next;
 
